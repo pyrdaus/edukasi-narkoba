@@ -1,0 +1,578 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background-color: #e9eef2;
+  color: #1e293b;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+/* Frame utama: Penuh di HP, lebar proporsional di Tablet & Laptop */
+.app-container {
+  width: 100%;
+  max-width: 1100px;
+  background-color: #f4f7f9;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  box-shadow: 0 0 25px rgba(0,0,0,0.08);
+}
+
+/* Header */
+.top-bar {
+  background-color: #ffffff;
+  padding: clamp(14px, 2vw, 18px) clamp(18px, 4vw, 36px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e2e8f0;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-box {
+  background-color: #3b5266;
+  color: #fff;
+  width: clamp(30px, 3vw, 36px);
+  height: clamp(30px, 3vw, 36px);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(15px, 1.8vw, 18px);
+}
+
+.brand-title {
+  font-weight: 700;
+  font-size: clamp(16px, 2vw, 20px);
+  color: #1e293b;
+}
+
+.btn-hotline {
+  background-color: #5b7083;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: clamp(12px, 1.4vw, 14px);
+  font-weight: 600;
+  padding: clamp(6px, 1vw, 8px) clamp(12px, 2vw, 18px);
+  border-radius: 20px;
+  transition: 0.2s;
+}
+
+.btn-hotline:hover {
+  background-color: #3b5266;
+}
+
+/* Area Konten */
+.main-content {
+  padding: clamp(18px, 3.5vw, 32px) clamp(18px, 4vw, 36px);
+  padding-bottom: clamp(85px, 10vw, 100px);
+  flex: 1;
+}
+
+.page {
+  display: none;
+  animation: fadeIn 0.25s ease;
+}
+
+.page.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Typography & Header Section */
+.hero-section {
+  text-align: center;
+  margin-bottom: clamp(20px, 3vw, 28px);
+  padding: clamp(10px, 2vw, 16px) 4px;
+}
+
+.hero-section h1 {
+  font-size: clamp(22px, 3.2vw, 30px);
+  color: #1e293b;
+  margin-bottom: 8px;
+}
+
+.section-header {
+  margin-bottom: clamp(16px, 2.5vw, 22px);
+}
+
+.section-header h2 {
+  font-size: clamp(19px, 2.6vw, 24px);
+  color: #1e293b;
+  margin-bottom: 4px;
+}
+
+.kicker {
+  font-size: clamp(11px, 1.2vw, 12px);
+  font-weight: 700;
+  color: #64748b;
+  letter-spacing: 0.8px;
+}
+
+.subtitle {
+  font-size: clamp(13px, 1.5vw, 15px);
+  color: #64748b;
+  line-height: 1.5;
+}
+
+/* Kartu Umum */
+.card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: clamp(16px, 2.5vw, 24px);
+  margin-bottom: clamp(14px, 2vw, 18px);
+  border: 1px solid #e2e8f0;
+}
+
+.card h3 {
+  font-size: clamp(16px, 2vw, 19px);
+  margin-bottom: 10px;
+  color: #1e293b;
+}
+
+.info-box {
+  background-color: #f8fafc;
+  padding: clamp(12px, 2vw, 16px);
+  border-radius: 8px;
+  font-size: clamp(13px, 1.5vw, 15px);
+  line-height: 1.6;
+  color: #334155;
+}
+
+.list-poin {
+  margin-top: 8px;
+  padding-left: 18px;
+}
+
+.list-poin li {
+  margin-bottom: 6px;
+}
+
+/* Kartu Gelap Landasan Hukum */
+.card-dark {
+  background-color: #5b7083;
+  color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  border: none;
+}
+
+.card-dark:hover {
+  background-color: #475a6b;
+}
+
+.card-dark-content {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.icon-doc {
+  font-size: clamp(24px, 2.8vw, 28px);
+  background: rgba(255,255,255,0.15);
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.card-dark h4 {
+  font-size: clamp(14px, 1.8vw, 17px);
+  margin-bottom: 2px;
+}
+
+.card-dark p {
+  font-size: clamp(12px, 1.4vw, 14px);
+  color: #e2e8f0;
+}
+
+.arrow {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+/* Tab Materi - Golongan */
+.gol-top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.badge {
+  font-size: clamp(11px, 1.2vw, 12px);
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 6px;
+  color: #fff;
+}
+
+.badge-red { background-color: #dc2626; }
+.badge-orange { background-color: #d97706; }
+.badge-blue { background-color: #2563eb; }
+
+.gol-desc {
+  font-size: clamp(12px, 1.4vw, 14px);
+  font-weight: 600;
+  color: #475569;
+}
+
+.text-sm {
+  font-size: clamp(13px, 1.5vw, 14.5px);
+  color: #64748b;
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+
+.tag-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag {
+  background-color: #f1f5f9;
+  color: #334155;
+  font-size: clamp(12px, 1.3vw, 13px);
+  font-weight: 500;
+  padding: 5px 12px;
+  border-radius: 6px;
+  border: 1px solid #cbd5e1;
+}
+
+/* Tab Simulasi Organ */
+.organ-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(10px, 2vw, 16px);
+  margin-bottom: 18px;
+}
+
+.organ-item {
+  background: #ffffff;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  padding: clamp(14px, 2vw, 20px);
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.organ-item:hover {
+  border-color: #94a3b8;
+}
+
+.organ-item.active {
+  border-color: #3b5266;
+  background-color: #f0f4f8;
+}
+
+.organ-icon {
+  font-size: clamp(24px, 2.8vw, 30px);
+  margin-bottom: 6px;
+}
+
+.organ-item h4 {
+  font-size: clamp(14px, 1.6vw, 16px);
+  color: #1e293b;
+}
+
+.organ-item span {
+  font-size: clamp(12px, 1.3vw, 13px);
+  color: #64748b;
+}
+
+.detail-organ-box {
+  border-left: 4px solid #3b5266;
+}
+
+.badge-target {
+  display: inline-block;
+  font-size: clamp(11px, 1.2vw, 12px);
+  background: #e2e8f0;
+  color: #334155;
+  padding: 3px 10px;
+  border-radius: 4px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.detail-organ-box p {
+  font-size: clamp(13px, 1.5vw, 15px);
+  color: #334155;
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+.gejala-box {
+  background: #f8fafc;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: clamp(12px, 1.4vw, 14px);
+}
+
+/* Tab Artikel */
+.search-box {
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  padding: 10px 14px;
+  margin-bottom: 18px;
+  gap: 8px;
+}
+
+.search-box input {
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: clamp(13px, 1.5vw, 14px);
+  font-family: inherit;
+}
+
+.artikel-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: clamp(11px, 1.2vw, 12px);
+  margin-bottom: 8px;
+}
+
+.kat {
+  background: #e2e8f0;
+  padding: 3px 9px;
+  border-radius: 4px;
+  font-weight: 600;
+  color: #334155;
+}
+
+.waktu {
+  color: #64748b;
+}
+
+.ringkasan {
+  font-size: clamp(13px, 1.5vw, 14.5px);
+  color: #64748b;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+.btn-link {
+  background: none;
+  border: none;
+  color: #2563eb;
+  font-weight: 600;
+  font-size: clamp(13px, 1.4vw, 14px);
+  cursor: pointer;
+  font-family: inherit;
+}
+
+/* Tab Bantuan & QnA */
+.qa-box {
+  background: #e2e8f0;
+  border: none;
+}
+
+.qa-header {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.qa-icon {
+  font-size: 26px;
+}
+
+.qa-header p {
+  font-size: clamp(12px, 1.4vw, 14px);
+  color: #475569;
+  line-height: 1.5;
+}
+
+.qa-form {
+  display: flex;
+  gap: 8px;
+}
+
+.qa-form input {
+  flex: 1;
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  font-size: clamp(13px, 1.4vw, 14px);
+  outline: none;
+}
+
+.qa-form button {
+  background: #3b5266;
+  color: #fff;
+  border: none;
+  padding: 0 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.chat-reply {
+  background: #ffffff;
+  padding: 12px 14px;
+  border-radius: 8px;
+  font-size: clamp(13px, 1.4vw, 14px);
+  margin-bottom: 10px;
+  line-height: 1.5;
+  border-left: 3px solid #3b5266;
+}
+
+.hidden {
+  display: none;
+}
+
+.bantuan-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+.bantuan-card {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+  transition: 0.2s;
+  margin-bottom: 0;
+}
+
+.bantuan-card:hover {
+  border-color: #3b5266;
+}
+
+.bantuan-icon {
+  font-size: 24px;
+  margin-bottom: 6px;
+}
+
+.bantuan-card h4 {
+  font-size: clamp(15px, 1.6vw, 16px);
+  margin-bottom: 4px;
+}
+
+.bantuan-card p {
+  font-size: clamp(12px, 1.4vw, 13.5px);
+  color: #64748b;
+  margin-bottom: 8px;
+}
+
+.bantuan-action {
+  font-size: clamp(13px, 1.4vw, 14px);
+  font-weight: 700;
+  color: #3b5266;
+  text-decoration: underline;
+}
+
+/* Navigasi Bawah */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  max-width: 1100px;
+  background: #ffffff;
+  border-top: 1px solid #e2e8f0;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0;
+  z-index: 20;
+}
+
+.nav-btn {
+  background: none;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  color: #64748b;
+  font-size: clamp(11px, 1.3vw, 13px);
+  font-family: inherit;
+  cursor: pointer;
+  padding: 4px 12px;
+}
+
+.nav-btn.active {
+  color: #1e293b;
+  font-weight: 700;
+}
+
+.nav-icon {
+  font-size: clamp(18px, 2vw, 21px);
+}
+
+/* Modal Popup */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 50;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: clamp(20px, 3vw, 28px);
+  border-radius: 12px;
+  max-width: 640px;
+  width: 100%;
+  position: relative;
+  max-height: 82vh;
+  overflow-y: auto;
+}
+
+.close-modal {
+  position: absolute;
+  right: 18px;
+  top: 14px;
+  font-size: 26px;
+  cursor: pointer;
+  color: #64748b;
+}
+
+.modal-body {
+  margin-top: 14px;
+  font-size: clamp(13px, 1.5vw, 15px);
+  line-height: 1.65;
+  color: #334155;
+}
+
+/* Penyesuaian Layar Tablet & Laptop (>= 768px) */
+@media (min-width: 768px) {
+  .organ-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .bantuan-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

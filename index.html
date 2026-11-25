@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edukasi Narkotika</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Pakai font standar Google Fonts biar rapi -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="app-container">
+    
+    <!-- Header Atas -->
+    <header class="top-bar">
+      <div class="logo-area">
+        <div class="logo-box">🛡️</div>
+        <span class="brand-title">Edukasi Narkotika</span>
+      </div>
+      <a href="tel:184" class="btn-hotline">📞 Hotline 184</a>
+    </header>
+
+    <!-- KONTEN UTAMA -->
+    <main class="main-content">
+
+      <!-- TAB 1: BERANDA -->
+      <section id="tab-beranda" class="page active">
+        <div class="hero-section">
+          <h1>Apa Itu Narkoba?</h1>
+          <p class="subtitle">Penjelasan komprehensif mengenai definisi NAPZA serta penggolongannya dalam dunia medis dan hukum.</p>
+        </div>
+
+        <div class="card">
+          <h3>Definisi Lengkap NAPZA</h3>
+          <div class="info-box">
+            <p><strong>NAPZA</strong> adalah singkatan dari <em>Narkotika, Psikotropika, dan Zat Adiktif lainnya</em>. Zat ini dapat memengaruhi kondisi kejiwaan, pikiran, perasaan, dan perilaku seseorang jika masuk ke dalam tubuh manusia.</p>
+            <ul class="list-poin">
+              <li><strong>Narkotika:</strong> Zat yang menurunkan kesadaran dan menghilangkan rasa nyeri.</li>
+              <li><strong>Psikotropika:</strong> Zat yang memengaruhi susunan saraf pusat dan mengubah aktivitas mental.</li>
+              <li><strong>Zat Adiktif:</strong> Bahan lain (seperti alkohol & nikotin) yang menimbulkan ketergantungan.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card card-dark" onclick="bukaModalHukum()">
+          <div class="card-dark-content">
+            <span class="icon-doc">📄</span>
+            <div>
+              <h4>Landasan Hukum</h4>
+              <p>Undang-Undang Republik Indonesia No. 35 Tahun 2009 tentang Narkotika.</p>
+            </div>
+          </div>
+          <span class="arrow">›</span>
+        </div>
+      </section>
+
+      <!-- TAB 2: MATERI NARKOBA -->
+      <section id="tab-materi" class="page">
+        <div class="section-header">
+          <h2>Penggolongan Narkotika</h2>
+          <p class="subtitle">Berdasarkan potensi ketergantungan dan penggunaannya dalam medis.</p>
+        </div>
+
+        <!-- Golongan I -->
+        <div class="card gol-card">
+          <div class="gol-top">
+            <span class="badge badge-red">Golongan I</span>
+            <p class="gol-desc">Risiko Ketergantungan Sangat Tinggi</p>
+          </div>
+          <p class="text-sm">Hanya digunakan untuk tujuan pengembangan ilmu pengetahuan dan tidak digunakan dalam terapi medis.</p>
+          <div class="tag-group">
+            <span class="tag">Ganja</span>
+            <span class="tag">Sabu-sabu</span>
+            <span class="tag">Heroin</span>
+            <span class="tag">Kokain</span>
+          </div>
+        </div>
+
+        <!-- Golongan II -->
+        <div class="card gol-card">
+          <div class="gol-top">
+            <span class="badge badge-orange">Golongan II</span>
+            <p class="gol-desc">Pilihan Terakhir Terapi Medis</p>
+          </div>
+          <p class="text-sm">Berkhasiat untuk pengobatan, digunakan sebagai pilihan terakhir dan dalam pengawasan ketat dokter.</p>
+          <div class="tag-group">
+            <span class="tag">Morfin</span>
+            <span class="tag">Petidin</span>
+            <span class="tag">Fentanil</span>
+          </div>
+        </div>
+
+        <!-- Golongan III -->
+        <div class="card gol-card">
+          <div class="gol-top">
+            <span class="badge badge-blue">Golongan III</span>
+            <p class="gol-desc">Potensi Ringan & Banyak Digunakan</p>
+          </div>
+          <p class="text-sm">Berkhasiat pengobatan dan banyak digunakan dalam terapi untuk mengurangi rasa sakit ringan hingga sedang.</p>
+          <div class="tag-group">
+            <span class="tag">Kodein</span>
+            <span class="tag">Buprenorfin</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 3: SIMULASI KERUSAKAN ORGAN -->
+      <section id="tab-simulasi" class="page">
+        <div class="section-header">
+          <h2>Simulasi Kerusakan Organ Tubuh</h2>
+          <p class="subtitle">Klik organ di bawah untuk melihat bagaimana zat adiktif merusak jaringan biologis manusia secara bertahap.</p>
+        </div>
+
+        <div class="organ-grid">
+          <div class="organ-item active" onclick="pilihOrgan('otak', this)">
+            <div class="organ-icon">🧠</div>
+            <h4>Otak</h4>
+            <span>Saraf Pusat</span>
+          </div>
+
+          <div class="organ-item" onclick="pilihOrgan('jantung', this)">
+            <div class="organ-icon">🫀</div>
+            <h4>Jantung</h4>
+            <span>Peredaran Darah</span>
+          </div>
+
+          <div class="organ-item" onclick="pilihOrgan('paru', this)">
+            <div class="organ-icon">🫁</div>
+            <h4>Paru-paru</h4>
+            <span>Pernapasan</span>
+          </div>
+
+          <div class="organ-item" onclick="pilihOrgan('hati', this)">
+            <div class="organ-icon">🩸</div>
+            <h4>Hati & Ginjal</h4>
+            <span>Penyaring Racun</span>
+          </div>
+        </div>
+
+        <!-- Panel Hasil Simulasi -->
+        <div class="card detail-organ-box" id="hasil-organ">
+          <span class="badge-target">Target Utama</span>
+          <h3 id="judul-organ">Kerusakan Otak & Sistem Saraf</h3>
+          <p id="deskripsi-organ">Zat stimulan seperti sabu-sabu memaksa otak melepas dopamin secara berlebihan. Jangka panjangnya, sel reseptor saraf mati permanen, memicu halusinasi, paranoid, hingga gangguan jiwa berat.</p>
+          <div class="gejala-box">
+            <strong>Gejala Fisik & Psikis:</strong>
+            <p id="gejala-organ">Sulit tidur (insomnia), gemetar (tremor), emosi tidak stabil, dan hilangnya daya ingat jangka pendek.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 4: ARTIKEL EDUKASI -->
+      <section id="tab-artikel" class="page">
+        <div class="section-header">
+          <span class="kicker">PUSAT EDUKASI</span>
+          <h2>Artikel Edukasi Mendalam</h2>
+          <p class="subtitle">Kumpulan artikel ilmiah mengenai dampak biologis, psikologis, dan cara pencegahan narkoba.</p>
+        </div>
+
+        <div class="search-box">
+          <span>🔍</span>
+          <input type="text" id="cariArtikel" placeholder="Cari topik artikel..." onkeyup="filterArtikel()">
+        </div>
+
+        <div id="daftar-artikel">
+          <article class="card artikel-item">
+            <div class="artikel-meta">
+              <span class="kat">Kesehatan Mental & Saraf</span>
+              <span class="waktu">🕒 5 Menit Baca</span>
+            </div>
+            <h3>Kronologi Kerusakan Sel Saraf Akibat Metamfetamin (Sabu-Sabu)</h3>
+            <p class="ringkasan">Penggunaan metamfetamin memicu lonjakan neurotransmiter yang merusak pembuluh darah di otak serta menurunkan fungsi kognitif secara drastis...</p>
+            <button class="btn-link" onclick="bukaArtikel(0)">Baca Artikel Lengkap →</button>
+          </article>
+
+          <article class="card artikel-item">
+            <div class="artikel-meta">
+              <span class="kat">Sistem Pernapasan</span>
+              <span class="waktu">🕒 4 Menit Baca</span>
+            </div>
+            <h3>Ancaman Nyata Asap Ganja dan Vape Terlarang Terhadap Paru Remaja</h3>
+            <p class="ringkasan">Kandungan tar dan bahan kimia sintetis pada cairan vape ilegal dapat menyebabkan peradangan akut pada alveolus paru-paru...</p>
+            <button class="btn-link" onclick="bukaArtikel(1)">Baca Artikel Lengkap →</button>
+          </article>
+
+          <article class="card artikel-item">
+            <div class="artikel-meta">
+              <span class="kat">Pencegahan & Sosial</span>
+              <span class="waktu">🕒 3 Menit Baca</span>
+            </div>
+            <h3>Cara Menolak Ajakan Teman Sebaya Tanpa Merusak Pertemanan</h3>
+            <p class="ringkasan">Tekanan lingkungan sering menjadi pintu awal penyalahgunaan zat. Pelajari teknik komunikasi asertif untuk menjaga diri...</p>
+            <button class="btn-link" onclick="bukaArtikel(2)">Baca Artikel Lengkap →</button>
+          </article>
+        </div>
+      </section>
+
+      <!-- TAB 5: BANTUAN & TANYA JAWAB -->
+      <section id="tab-bantuan" class="page">
+        
+        <!-- Kotak Tanya Jawab Cepat -->
+        <div class="card qa-box">
+          <div class="qa-header">
+            <span class="qa-icon">💬</span>
+            <div>
+              <h3>Tanya Jawab Seputar Narkotika</h3>
+              <p>Ada yang mau ditanyakan seputar bahaya narkoba atau efek biologisnya? Ketik di bawah ya.</p>
+            </div>
+          </div>
+          
+          <div id="chat-output" class="chat-reply hidden"></div>
+
+          <form class="qa-form" onsubmit="kirimPertanyaan(event)">
+            <input type="text" id="inputPertanyaan" placeholder="Contoh: apa bahaya ganja?" required>
+            <button type="submit">➤</button>
+          </form>
+        </div>
+
+        <div class="section-header" style="margin-top: 20px;">
+          <h2>Butuh Bantuan Darurat & Rehabilitasi?</h2>
+          <p class="subtitle">Layanan aduan resmi dan konsultasi pemulihan. Kerahasiaan pelapor terjamin.</p>
+        </div>
+
+        <div class="bantuan-list">
+          <a href="tel:184" class="card bantuan-card">
+            <div class="bantuan-icon">📞</div>
+            <h4>Hotline BNN</h4>
+            <p>Layanan aduan resmi nasional 24 jam</p>
+            <span class="bantuan-action">184</span>
+          </a>
+
+          <a href="https://wa.me/6281221675675" target="_blank" class="card bantuan-card">
+            <div class="bantuan-icon">💬</div>
+            <h4>WhatsApp Konsultasi</h4>
+            <p>Curhat aman tanpa dihakimi dengan konselor</p>
+            <span class="bantuan-action">Hubungi Nomor WA</span>
+          </a>
+
+          <a href="https://www.google.com/maps/search/pusat+rehabilitasi+bnn+terdekat" target="_blank" class="card bantuan-card">
+            <div class="bantuan-icon">📍</div>
+            <h4>Lokasi Rehabilitasi</h4>
+            <p>Cari titik pemulihan terdekat dari lokasimu</p>
+            <span class="bantuan-action">Buka Maps</span>
+          </a>
+        </div>
+
+      </section>
+
+    </main>
+
+    <!-- Navigasi Bawah -->
+    <nav class="bottom-nav">
+      <button class="nav-btn active" onclick="pindahTab('tab-beranda', this)">
+        <span class="nav-icon">🏠</span>
+        <span>Beranda</span>
+      </button>
+      <button class="nav-btn" onclick="pindahTab('tab-materi', this)">
+        <span class="nav-icon">📘</span>
+        <span>Materi</span>
+      </button>
+      <button class="nav-btn" onclick="pindahTab('tab-simulasi', this)">
+        <span class="nav-icon">🧬</span>
+        <span>Simulasi</span>
+      </button>
+      <button class="nav-btn" onclick="pindahTab('tab-artikel', this)">
+        <span class="nav-icon">📰</span>
+        <span>Artikel</span>
+      </button>
+      <button class="nav-btn" onclick="pindahTab('tab-bantuan', this)">
+        <span class="nav-icon">🆘</span>
+        <span>Bantuan</span>
+      </button>
+    </nav>
+
+  </div>
+
+  <!-- Modal Popup untuk Baca Artikel / Hukum -->
+  <div id="modalInfo" class="modal">
+    <div class="modal-content">
+      <span class="close-modal" onclick="tutupModal()">&times;</span>
+      <h3 id="modalJudul">Judul</h3>
+      <div id="modalIsi" class="modal-body"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html> 
